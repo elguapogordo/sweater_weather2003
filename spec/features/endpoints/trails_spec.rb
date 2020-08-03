@@ -6,6 +6,6 @@ RSpec.describe 'trails endpoint', type: :request do
 
     expect(response).to be_successful
     json = JSON.parse(response.body)
-    expect(json[:data][:attributes]).to_not be_empty
+    expect(json[:data][:attributes].size).to eq(3)
   end
 end

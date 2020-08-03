@@ -7,12 +7,12 @@ class TrailsList
     weather = OpenWeatherService.new.get_forecast(@location[:coordinates])
     @forecast = weather[:current]
     trailslist = TrailsService.new.get_trails(@location[:coordinates])
-    @trails = summarize(trailslist[:trails])
+    @trails = summarize(trailslist[:trails], @location[:coordinates])
   end
 
-  def summarize(trails)
+  def summarize(trails, origin)
     trails.map do |trail|
-      Trail.new(trail)
+      Trail.new(trail, origin)
     end
   end
 end

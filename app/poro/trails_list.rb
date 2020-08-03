@@ -6,7 +6,13 @@ class TrailsList
     @location = LocationService.new.get_coordinates(city_state)
     weather = OpenWeatherService.new.get_forecast(@location[:coordinates])
     @forecast = weather[:current]
-    binding.pry
-    @trails = TrailsService.new.get_trails(@location[:coordinates])
+    trailslist = TrailsService.new.get_trails(@location[:coordinates])
+    @trails = summarize(trailslist[:trails])
+  end
+
+  def summarize(trails)
+    trails.map do |trail|
+      Trail.new(trail)
+    end
   end
 end

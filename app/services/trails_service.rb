@@ -4,7 +4,6 @@ class TrailsService
       req.params['lat'] = coordinates[:lat]
       req.params['lon'] = coordinates[:lng]
     end
-    binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 

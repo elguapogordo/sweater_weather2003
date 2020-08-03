@@ -15,8 +15,3 @@ class OpenWeatherService
     end
   end
 end
-
-# current = json[:current]
-# hourly = json[:hourly]
-# daily = json[:daily]
-# binding.pry

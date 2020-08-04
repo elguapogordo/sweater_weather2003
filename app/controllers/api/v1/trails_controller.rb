@@ -1,5 +1,5 @@
 class Api::V1::TrailsController < ApplicationController
   def index
-    render json: TrailsSerializer.new(TrailsList.new(params[:location]))
+    render json: TrailSerializer.new(TrailList.new(params[:location]))
   end
 end

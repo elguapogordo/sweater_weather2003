@@ -13,15 +13,15 @@ RSpec.describe 'users endpoint', type: :request do
 
     user = JSON.parse(response.body, symbolize_names: true)
 
-    expect(user[:type]).to eq('users')
-    expect(user[:attributes].length).to eq(2)
-    expect(user[:attributes]).to have_key(:email)
-    expect(user[:attributes][:email]).to eq('whatever@example.com')
-    expect(user[:attributes]).to have_key(:api_key)
-    expect(user[:attributes][:api_key]).not_to be_nil
+    expect(user[:data][:type]).to eq('users')
+    expect(user[:data][:attributes].length).to eq(2)
+    expect(user[:data][:attributes]).to have_key(:email)
+    expect(user[:data][:attributes][:email]).to eq('whatever@example.com')
+    expect(user[:data][:attributes]).to have_key(:api_key)
+    expect(user[:data][:attributes][:api_key]).not_to be_nil
   end
 
-  it 'validates email uniqueness' do
+  xit 'validates email uniqueness' do
     User.create!(email: 'whatever@example.com', password: 'password', password_confirmation: 'password')
   end
 end

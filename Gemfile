@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'faraday'
 gem 'fast_jsonapi'
@@ -16,8 +17,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'launchy'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
@@ -29,6 +29,7 @@ end
 
 group :test do
   gem 'simplecov'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

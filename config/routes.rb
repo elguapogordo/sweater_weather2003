@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
-      resources :backgrounds, only: [:index]
+      resources :background, only: [:index]
       resources :forecast, only: [:index]
       resources :trails, only: [:index]
     end

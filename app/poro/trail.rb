@@ -6,6 +6,6 @@ class Trail
     @summary = trail_info[:summary]
     @difficulty = trail_info[:difficulty]
     @location = trail_info[:location]
-    @distance_to_trail = DirectionsService.new.trail_distance(trail_info, origin)
+    @distance_to_trail = DirectionsService.new.trail_distance(trail_info, origin).to_f.to_s
   end
 end

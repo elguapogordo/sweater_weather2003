@@ -9,7 +9,7 @@ RSpec.describe 'users endpoint', type: :request do
       password_confirmation: 'password'
     }
 
-    expect(response).to be_successful
+    expect(response.status).to eq(201)
 
     user = JSON.parse(response.body, symbolize_names: true)
 

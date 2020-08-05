@@ -11,14 +11,14 @@ RSpec.describe 'users endpoint', type: :request do
 
     expect(response.status).to eq(201)
 
-    user = JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true)
 
-    expect(user[:data][:type]).to eq('users')
-    expect(user[:data][:attributes].length).to eq(2)
-    expect(user[:data][:attributes]).to have_key(:email)
-    expect(user[:data][:attributes][:email]).to eq('whatever@example.com')
-    expect(user[:data][:attributes]).to have_key(:api_key)
-    expect(user[:data][:attributes][:api_key]).not_to be_nil
+    expect(json[:data][:type]).to eq('users')
+    expect(json[:data][:attributes].length).to eq(2)
+    expect(json[:data][:attributes]).to have_key(:email)
+    expect(json[:data][:attributes][:email]).to eq('whatever@example.com')
+    expect(json[:data][:attributes]).to have_key(:api_key)
+    expect(json[:data][:attributes][:api_key]).not_to be_nil
   end
 
   it 'validates email presence' do

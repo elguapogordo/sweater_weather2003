@@ -69,6 +69,5 @@ RSpec.describe 'forecast endpoint', type: :request do
     expect(json[:data][:attributes][:daily][0]).to have_key(:weather_icon_id)
     expect(json[:data][:attributes][:daily][0][:weather_icon_id]).not_to be_nil
     expect(json[:data][:attributes][:daily][0]).to have_key(:precip_mm)
-    expect(json[:data][:attributes][:daily][0][:precip_mm]).not_to be_nil
   end
 end

@@ -1,17 +1,15 @@
 language: ruby
-
 rbenv:
-  - 2.5.3
-
+- 2.5.3
 services:
-  - postgresql
-
+- postgresql
 addons:
-  - postgresql: 9.6
-
+- postgresql: 9.6
 dist: xenial
-
 script:
-  - bundle install
-  - bundle exec rails db:{create,migrate}
-  - bundle exec rspec
+- bundle install
+- bundle exec rails db:{create,migrate}
+- bundle exec rspec
+deploy:
+  api_key:
+    secure: TVfAivMKnCq3JR2vJBJ9K01UPPJ9SZfgT2VeE4SbQ7l8u8llNppWeBjGQIyKuBN1Kf4wV9aTHTwC5hGy3AySyYPjPU8lI50rVMS26WiM8zPlFJaOt/zHJdeLpGKIlEpo5v50ZgixgHB9bsU61i4QvJrRvzxglRmP6RuEj1cCRKirlTd4caPY7sPdKV9pV6+xI9ZEIErTLXHNZSNzCthJ7fJb0Ze2Xp/nEcN7le4pgVLGIaKP8+kUfrFBEpnDRozuVnOtu23z8N+aCofsk7urHKYvUKHABiSqVmTSzLmPK4EvzRWJgeHyMFs5drHG/x+t0s8qIm1UBRQv49AElR1X/vuOP35ZYuBlRgmRPKhrk2OxA7w7kh6kpwlIVajU7UHsAvUq2bJRw4w5kahQP6zxA9HcNQDBnerC0uIeobSi7Gla5C8Bm2vuJ8ALgQH0Rk+Qe5ndzBPJn2QDpyrxmlneyyBW18SvOPFo/rcdT82bLuCKI/wbp/9nedHmkVgFLDD9CzwLesC3xBvC/ZA2qD3oWyaGBD0kOwJL/4Vl74dqN21wTowldq9j/CR/jykRSs9lln3ijka7Nnn5vsNwGauLkPDT2qO1Y+NIdnXmfyqg2OwqCMg3sFGVEUEfSkv2zjkDh8cKvBc6TQJSwRu8tSF+rL9MGS8IVO0PNpVua+EDTBw=

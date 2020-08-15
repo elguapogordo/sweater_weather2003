@@ -8,7 +8,7 @@ class Api::V1::SessionsController < ApplicationController
         render json: { error: 'Password authentication failed' }, status: 400
       end
     else
-      render json: { error: 'User not found'}, status: 400
+      render json: { error: 'User not found' }, status: 400
     end
   end
 end

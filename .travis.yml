@@ -1,5 +1,12 @@
 language: ruby
+
 rbenv:
   - 2.5.3
+
 services:
-  - postgresql
+  - postgresql: "12.3"
+
+script:
+  - bundle install
+  - bundle exec rails db:{create,migrate}
+  - bundle exec rspec

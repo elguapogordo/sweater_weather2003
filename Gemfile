@@ -9,12 +9,13 @@ gem 'faraday'
 gem 'fast_jsonapi'
 gem 'figaro'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'pry'
+gem 'pry' # development, test
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # test
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
